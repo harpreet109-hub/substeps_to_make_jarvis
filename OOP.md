@@ -132,9 +132,8 @@ print(s4.average())
 
 
 
-STATIC METHOD - we have seen functions where we don't need self but we have to pass it in arguments or else it will return error , to solve this problem we use static methos
-when do we actually need self- when we do things at object level , or use attribute of object hence,
-we can declare  the method at class level, i.e, common for all.
+STATIC METHOD - we have seen functions where we don't need self but we have to pass it in arguments or else it will return error , to solve this problem we use static method.
+when do we actually need self- when we do things at object level , or use attribute of object hence,we can declare the method at class level, i.e, common for all.
 
 
 class student: 
@@ -192,4 +191,29 @@ a1=bank(10000 , 4567)
 a1.credit(5000, 4567)
 a1.debit(2000, 5769)
 a1.get_balance()
+
+
+# PRIVATE:- 
+when you want a specific method and function to work only inside class and not be available outside the class.
+use __ in front of any method or attribute name to make it private
+methods can be used inside the class as usual but not outside
+
+class bank:
+    def __init__(self,balance , account_no):
+        self.balance=balance
+        self.__account_no = account_no
+    def verify(self,account_no):
+        if(account_no== self.__account_no):
+            print(self.__account_no)
+a1= bank(10000 , 8765)'
+a1.verify(8765)
+print(a1.__account_no)
+
+
+# INHERITANCE 
+taking properties/ methods from another class
+
+
+
+
 
